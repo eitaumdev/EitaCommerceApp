@@ -1,1 +1,1 @@
-# EcommerceApp
+# EitaCommerceApp
