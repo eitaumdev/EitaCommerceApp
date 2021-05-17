@@ -8,8 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		770E35182647112700888660 /* EitaCommerceCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 770E350E2647112700888660 /* EitaCommerceCore.framework */; };
-		770E351D2647112700888660 /* EitaCommerceCoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770E351C2647112700888660 /* EitaCommerceCoreTests.swift */; };
-		770E351F2647112700888660 /* EitaCommerceCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 770E35112647112700888660 /* EitaCommerceCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		77E0B2A92651962A001C1876 /* CartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E0B2A82651962A001C1876 /* CartTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -24,11 +23,11 @@
 
 /* Begin PBXFileReference section */
 		770E350E2647112700888660 /* EitaCommerceCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EitaCommerceCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		770E35112647112700888660 /* EitaCommerceCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EitaCommerceCore.h; sourceTree = "<group>"; };
 		770E35122647112700888660 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		770E35172647112700888660 /* EitaCommerceCoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EitaCommerceCoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		770E351C2647112700888660 /* EitaCommerceCoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EitaCommerceCoreTests.swift; sourceTree = "<group>"; };
 		770E351E2647112700888660 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		77E0B2A5265152BF001C1876 /* EitaCommerceCore.profdata */ = {isa = PBXFileReference; lastKnownFileType = file; path = EitaCommerceCore.profdata; sourceTree = "<group>"; };
+		77E0B2A82651962A001C1876 /* CartTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +55,7 @@
 				770E35102647112700888660 /* EitaCommerceCore */,
 				770E351B2647112700888660 /* EitaCommerceCoreTests */,
 				770E350F2647112700888660 /* Products */,
+				77E0B2A4265152BF001C1876 /* OptimizationProfiles */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,7 +71,6 @@
 		770E35102647112700888660 /* EitaCommerceCore */ = {
 			isa = PBXGroup;
 			children = (
-				770E35112647112700888660 /* EitaCommerceCore.h */,
 				770E35122647112700888660 /* Info.plist */,
 			);
 			path = EitaCommerceCore;
@@ -80,10 +79,18 @@
 		770E351B2647112700888660 /* EitaCommerceCoreTests */ = {
 			isa = PBXGroup;
 			children = (
-				770E351C2647112700888660 /* EitaCommerceCoreTests.swift */,
 				770E351E2647112700888660 /* Info.plist */,
+				77E0B2A82651962A001C1876 /* CartTests.swift */,
 			);
 			path = EitaCommerceCoreTests;
+			sourceTree = "<group>";
+		};
+		77E0B2A4265152BF001C1876 /* OptimizationProfiles */ = {
+			isa = PBXGroup;
+			children = (
+				77E0B2A5265152BF001C1876 /* EitaCommerceCore.profdata */,
+			);
+			path = OptimizationProfiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -93,7 +100,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				770E351F2647112700888660 /* EitaCommerceCore.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,6 +156,7 @@
 					};
 					770E35162647112700888660 = {
 						CreatedOnToolsVersion = 12.5;
+						LastSwiftMigration = 1250;
 					};
 				};
 			};
@@ -201,7 +208,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				770E351D2647112700888660 /* EitaCommerceCoreTests.swift in Sources */,
+				77E0B2A92651962A001C1876 /* CartTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,6 +348,7 @@
 		770E35232647112700888660 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_USE_OPTIMIZATION_PROFILE = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 66KNLMFJQ2;
@@ -366,6 +374,7 @@
 		770E35242647112700888660 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_USE_OPTIMIZATION_PROFILE = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 66KNLMFJQ2;
@@ -391,6 +400,7 @@
 		770E35262647112700888660 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 66KNLMFJQ2;
 				INFOPLIST_FILE = EitaCommerceCoreTests/Info.plist;
@@ -401,6 +411,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.eita.EitaCommerceCoreTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -409,6 +420,7 @@
 		770E35272647112700888660 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 66KNLMFJQ2;
 				INFOPLIST_FILE = EitaCommerceCoreTests/Info.plist;
