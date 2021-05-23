@@ -26,7 +26,6 @@
 		770E35122647112700888660 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		770E35172647112700888660 /* EitaCommerceCoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EitaCommerceCoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		770E351E2647112700888660 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		77E0B2A5265152BF001C1876 /* EitaCommerceCore.profdata */ = {isa = PBXFileReference; lastKnownFileType = file; path = EitaCommerceCore.profdata; sourceTree = "<group>"; };
 		77E0B2A82651962A001C1876 /* CartTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -55,7 +54,6 @@
 				770E35102647112700888660 /* EitaCommerceCore */,
 				770E351B2647112700888660 /* EitaCommerceCoreTests */,
 				770E350F2647112700888660 /* Products */,
-				77E0B2A4265152BF001C1876 /* OptimizationProfiles */,
 			);
 			sourceTree = "<group>";
 		};
@@ -83,14 +81,6 @@
 				77E0B2A82651962A001C1876 /* CartTests.swift */,
 			);
 			path = EitaCommerceCoreTests;
-			sourceTree = "<group>";
-		};
-		77E0B2A4265152BF001C1876 /* OptimizationProfiles */ = {
-			isa = PBXGroup;
-			children = (
-				77E0B2A5265152BF001C1876 /* EitaCommerceCore.profdata */,
-			);
-			path = OptimizationProfiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
