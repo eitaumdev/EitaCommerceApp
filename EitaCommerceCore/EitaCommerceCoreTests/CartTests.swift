@@ -7,29 +7,65 @@
 
 import XCTest
 
+class Cart {
+
+    private(set) var items = [String]()
+
+    func addProduct(_ product: String) {
+        items.append(product)
+    }
+
+    func removeProduct(_ product: String) {
+        guard let productToRemoveIndex = items.firstIndex(of: product) else {
+            return
+        }
+        items.remove(at: productToRemoveIndex)
+    }
+}
+
 class CartTests: XCTestCase {
 
-    override class func setUp() {
-        print("Eita um setup da classe")
+    func testCart_AddTwoProduct_ShouldHaveTwoProducts() {
+        //Arrenge
+        let sut = Cart()
+
+        //Act
+        sut.addProduct("Product 1")
+        sut.addProduct("Product 2")
+
+        //Assert
+        XCTAssertEqual(sut.items.count, 2)
+        XCTAssertEqual(sut.items.first, "Product 1")
+        XCTAssertEqual(sut.items.last, "Product 2")
     }
 
-    override class func tearDown() {
-        print("Eita um teardown da classe")
+    func testCart_RemoveOneProduct_ShouldHaveOneProduct() {
+        //Arrenge
+        let sut = Cart()
+
+        //Act
+        sut.addProduct("Product 1")
+        sut.addProduct("Product 2")
+        sut.removeProduct("Product 1")
+
+        //Assert
+        XCTAssertEqual(sut.items.count, 1)
+        XCTAssertEqual(sut.items.first, "Product 2")
     }
 
-    override func setUpWithError() throws {
-        print("Eita um setup da instancia")
-    }
+    func testCart_RemoveOneProduct_ShouldHaveTwoProducts() {
+        //Arrenge
+        let sut = Cart()
 
-    override func tearDownWithError() throws {
-        print("Eita um teardown da instancia")
-    }
+        //Act
+        sut.addProduct("Product 1")
+        sut.addProduct("Product 2")
+        sut.addProduct("Product 2")
+        sut.removeProduct("Product 2")
 
-    func test1() {
-        print("Meu teste 1")
-    }
-
-    func test2() {
-        print("Meu teste 2")
+        //Assert
+        XCTAssertEqual(sut.items.count, 2)
+        XCTAssertEqual(sut.items.first, "Product 1")
+        XCTAssertEqual(sut.items.last, "Product 2")
     }
 }
