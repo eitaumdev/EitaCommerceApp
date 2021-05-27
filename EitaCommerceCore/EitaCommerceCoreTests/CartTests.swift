@@ -33,58 +33,54 @@ class Cart {
 
 class CartTests: XCTestCase {
 
+    let item1 = "Item 1"
+    let item2 = "Item 2"
+    let item3 = "Item 3"
+
     func testCart_AddTwoProduct_ShouldHaveTwoProducts() {
         //Arrenge
         let sut = Cart(items: [])
 
         //Act
-        sut.addProduct("Product 1")
-        sut.addProduct("Product 2")
+        sut.addProduct(item1)
+        sut.addProduct(item2)
 
         //Assert
         XCTAssertEqual(sut.items.count, 2)
-        XCTAssertEqual(sut.items.first, "Product 1")
-        XCTAssertEqual(sut.items.last, "Product 2")
+        XCTAssertEqual(sut.items.first, item1)
+        XCTAssertEqual(sut.items.last, item2)
     }
 
     func testCart_RemoveOneProduct_ShouldHaveOneProduct() {
         //Arrenge
-        let sut = Cart(items: [])
+        let sut = Cart(items: [item1, item2])
 
         //Act
-        sut.addProduct("Product 1")
-        sut.addProduct("Product 2")
-        sut.removeProduct("Product 1")
+        sut.removeProduct(item1)
 
         //Assert
         XCTAssertEqual(sut.items.count, 1)
-        XCTAssertEqual(sut.items.first, "Product 2")
+        XCTAssertEqual(sut.items.first, item2)
     }
 
     func testCart_RemoveOneProduct_ShouldHaveTwoProducts() {
         //Arrenge
-        let sut = Cart(items: [])
+        let sut = Cart(items: [item1, item2, item2])
 
         //Act
-        sut.addProduct("Product 1")
-        sut.addProduct("Product 2")
-        sut.addProduct("Product 2")
-        sut.removeProduct("Product 2")
+        sut.removeProduct(item2)
 
         //Assert
         XCTAssertEqual(sut.items.count, 2)
-        XCTAssertEqual(sut.items.first, "Product 1")
-        XCTAssertEqual(sut.items.last, "Product 2")
+        XCTAssertEqual(sut.items.first, item1)
+        XCTAssertEqual(sut.items.last, item2)
     }
 
     func testCart_clearAllCart_CartShouldBeEmpty() {
         //Arrange
-        let sut = Cart(items: [])
+        let sut = Cart(items: [item1, item2, item3])
 
         //Act
-        sut.addProduct("Product 1")
-        sut.addProduct("Product 2")
-        sut.addProduct("Product 2")
         sut.clear()
 
         //Assert
