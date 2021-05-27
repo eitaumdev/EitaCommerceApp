@@ -15,15 +15,15 @@ class Cart {
         self.items = items
     }
 
-    func addProduct(_ product: String) {
-        items.append(product)
+    func addItem(_ item: String) {
+        items.append(item)
     }
 
-    func removeProduct(_ product: String) {
-        guard let productToRemoveIndex = items.firstIndex(of: product) else {
+    func removeItem(_ item: String) {
+        guard let itemIndex = items.firstIndex(of: item) else {
             return
         }
-        items.remove(at: productToRemoveIndex)
+        items.remove(at: itemIndex)
     }
 
     func clear() {
@@ -37,13 +37,13 @@ class CartTests: XCTestCase {
     let item2 = "Item 2"
     let item3 = "Item 3"
 
-    func testCart_AddTwoProduct_ShouldHaveTwoProducts() {
+    func testCart_AddTwoItem_ShouldHaveTwoItems() {
         //Arrenge
         let sut = Cart(items: [])
 
         //Act
-        sut.addProduct(item1)
-        sut.addProduct(item2)
+        sut.addItem(item1)
+        sut.addItem(item2)
 
         //Assert
         XCTAssertEqual(sut.items.count, 2)
@@ -51,24 +51,24 @@ class CartTests: XCTestCase {
         XCTAssertEqual(sut.items.last, item2)
     }
 
-    func testCart_RemoveOneProduct_ShouldHaveOneProduct() {
+    func testCart_RemoveOneItem_ShouldHaveOneItem() {
         //Arrenge
         let sut = Cart(items: [item1, item2])
 
         //Act
-        sut.removeProduct(item1)
+        sut.removeItem(item1)
 
         //Assert
         XCTAssertEqual(sut.items.count, 1)
         XCTAssertEqual(sut.items.first, item2)
     }
 
-    func testCart_RemoveOneProduct_ShouldHaveTwoProducts() {
+    func testCart_RemoveOneItem_ShouldHaveTwoItems() {
         //Arrenge
         let sut = Cart(items: [item1, item2, item2])
 
         //Act
-        sut.removeProduct(item2)
+        sut.removeItem(item2)
 
         //Assert
         XCTAssertEqual(sut.items.count, 2)
