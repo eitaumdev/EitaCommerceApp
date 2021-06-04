@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7700F1AF266A6A0000F3044C /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7700F1AE266A6A0000F3044C /* Cart.swift */; };
 		770E35182647112700888660 /* EitaCommerceCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 770E350E2647112700888660 /* EitaCommerceCore.framework */; };
 		77E0B2A92651962A001C1876 /* CartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E0B2A82651962A001C1876 /* CartTests.swift */; };
 /* End PBXBuildFile section */
@@ -22,6 +23,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7700F1AE266A6A0000F3044C /* Cart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
 		770E350E2647112700888660 /* EitaCommerceCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EitaCommerceCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		770E35122647112700888660 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		770E35172647112700888660 /* EitaCommerceCoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EitaCommerceCoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,6 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				770E35122647112700888660 /* Info.plist */,
+				7700F1AE266A6A0000F3044C /* Cart.swift */,
 			);
 			path = EitaCommerceCore;
 			sourceTree = "<group>";
@@ -143,6 +146,7 @@
 				TargetAttributes = {
 					770E350D2647112700888660 = {
 						CreatedOnToolsVersion = 12.5;
+						LastSwiftMigration = 1250;
 					};
 					770E35162647112700888660 = {
 						CreatedOnToolsVersion = 12.5;
@@ -191,6 +195,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7700F1AF266A6A0000F3044C /* Cart.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,6 +343,7 @@
 		770E35232647112700888660 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_OPTIMIZATION_PROFILE_FILE = "";
 				CLANG_USE_OPTIMIZATION_PROFILE = NO;
 				CODE_SIGN_STYLE = Automatic;
@@ -357,6 +363,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.eita.EitaCommerceCore;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -365,6 +372,7 @@
 		770E35242647112700888660 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_OPTIMIZATION_PROFILE_FILE = "";
 				CLANG_USE_OPTIMIZATION_PROFILE = NO;
 				CODE_SIGN_STYLE = Automatic;
@@ -392,6 +400,7 @@
 		770E35262647112700888660 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 66KNLMFJQ2;
@@ -412,6 +421,7 @@
 		770E35272647112700888660 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 66KNLMFJQ2;
