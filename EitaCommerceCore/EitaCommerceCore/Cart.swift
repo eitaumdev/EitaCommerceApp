@@ -7,24 +7,30 @@
 
 import Foundation
 
+public protocol CartItemProtocol {
+    var item: String { get }
+
+    func isEqual(_ other: CartItemProtocol) -> Bool
+}
+
 public final class Cart {
 
-    private var items: [String]
+    private var items: [CartItemProtocol]
 
-    public init(items: [String]) {
+    public init(items: [CartItemProtocol]) {
         self.items = items
     }
 
-    public func getItems() -> [String] {
+    public func getItems() -> [CartItemProtocol] {
         return items
     }
 
-    public func addItem(_ item: String) {
+    public func addItem(_ item: CartItemProtocol) {
         items.append(item)
     }
 
-    public func removeItem(_ item: String) {
-        guard let itemIndex = items.firstIndex(of: item) else {
+    public func removeItem(_ item: CartItemProtocol) {
+        guard let itemIndex = items.firstIndex(where: { $0.isEqual(item) }) else {
             return
         }
         items.remove(at: itemIndex)

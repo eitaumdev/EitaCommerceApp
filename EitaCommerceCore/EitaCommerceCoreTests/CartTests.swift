@@ -10,9 +10,9 @@ import EitaCommerceCore
 
 class CartTests: XCTestCase {
 
-    let item1 = "Item 1"
-    let item2 = "Item 2"
-    let item3 = "Item 3"
+    let item1 = CartItem(item: "Item 1")
+    let item2 = CartItem(item: "Item 2")
+    let item3 = CartItem(item: "Item 3")
 
     func testCart_AddTwoItem_ShouldHaveTwoItems() {
         //Arrenge
@@ -24,8 +24,8 @@ class CartTests: XCTestCase {
 
         //Assert
         XCTAssertEqual(sut.getItems().count, 2)
-        XCTAssertEqual(sut.getItems().first, item1)
-        XCTAssertEqual(sut.getItems().last, item2)
+        XCTAssertTrue(sut.getItems().first!.isEqual(item1))
+        XCTAssertTrue(sut.getItems().last!.isEqual(item2))
     }
 
     func testCart_RemoveOneItem_ShouldHaveOneItem() {
@@ -37,7 +37,7 @@ class CartTests: XCTestCase {
 
         //Assert
         XCTAssertEqual(sut.getItems().count, 1)
-        XCTAssertEqual(sut.getItems().first, item2)
+        XCTAssertTrue(sut.getItems().first!.isEqual(item2))
     }
 
     func testCart_RemoveOneItem_ShouldHaveTwoItems() {
@@ -49,8 +49,8 @@ class CartTests: XCTestCase {
 
         //Assert
         XCTAssertEqual(sut.getItems().count, 2)
-        XCTAssertEqual(sut.getItems().first, item1)
-        XCTAssertEqual(sut.getItems().last, item2)
+        XCTAssertTrue(sut.getItems().first!.isEqual(item1))
+        XCTAssertTrue(sut.getItems().last!.isEqual(item2))
     }
 
     func testCart_clearAllCart_CartShouldBeEmpty() {
@@ -62,5 +62,15 @@ class CartTests: XCTestCase {
 
         //Assert
         XCTAssertTrue(sut.getItems().isEmpty)
+    }
+
+    // Mark: - Helper
+
+    struct CartItem: CartItemProtocol {
+        let item: String
+
+        func isEqual(_ other: CartItemProtocol) -> Bool {
+             return item == item
+        }
     }
 }
