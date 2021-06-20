@@ -70,7 +70,7 @@ class CartTests: XCTestCase {
         let item: String
 
         func isEqual(_ other: CartItemProtocol) -> Bool {
-             return item == item
+            return item == other.item
         }
     }
 }
