@@ -93,6 +93,16 @@ class CartTests: XCTestCase {
         XCTAssertEqual(sut.getItems().first?.quantity, 2)
     }
 
+    func testCart_CartWithSameTwoItems_CartShoudBeOneItemWithQuantityTwo() {
+        //Arrange
+        let sut = Cart(items: [item1, item1])
+
+        //Assert
+        XCTAssertEqual(sut.getItems().count, 1)
+        XCTAssertEqual(sut.getItems().first?.quantity, 2)
+    }
+
+
 
     // Mark: - Helper
 

@@ -23,7 +23,7 @@ public final class Cart {
 
     //MARK: - Public initializer
     public init(items: [CartItemProtocol]) {
-        self.items = items
+        self.items = Cart.addItemOrUpdateQuantity(items)
     }
 
     //MARK: - Public Methods
@@ -54,5 +54,23 @@ public final class Cart {
         return items.reduce(0) { result, item in
             result + item.price
         }
+    }
+
+    //MARK: - Private Items
+    private static func addItemOrUpdateQuantity(_ items: [CartItemProtocol]) -> [CartItemProtocol] {
+        var filteredItems = [CartItemProtocol]()
+
+        items.forEach { item in
+            let internalFilteredItem = items.filter { internalItem in
+                item.isEqual(internalItem)
+            }
+
+            if !filteredItems.contains(where: { $0.isEqual(item) }) {
+                item.setQuantity(internalFilteredItem.count)
+                filteredItems.append(item)
+            }
+        }
+
+        return filteredItems
     }
 }
