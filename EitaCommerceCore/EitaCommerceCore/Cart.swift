@@ -9,6 +9,7 @@ import Foundation
 
 public protocol CartItemProtocol {
     var item: String { get }
+    var price: Int { get }
 
     func isEqual(_ other: CartItemProtocol) -> Bool
 }
@@ -38,5 +39,11 @@ public final class Cart {
 
     public func clear() {
         items.removeAll()
+    }
+
+    public func getPrice() -> Int {
+        return items.reduce(0) { result, item in
+            result + item.price
+        }
     }
 }
