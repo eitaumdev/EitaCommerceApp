@@ -18,12 +18,15 @@ public protocol CartItemProtocol {
 
 public final class Cart {
 
+    //MARK: - Private properties
     private var items: [CartItemProtocol]
 
+    //MARK: - Public initializer
     public init(items: [CartItemProtocol]) {
         self.items = items
     }
 
+    //MARK: - Public Methods
     public func getItems() -> [CartItemProtocol] {
         return items
     }
