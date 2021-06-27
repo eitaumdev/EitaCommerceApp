@@ -10,7 +10,9 @@ import Foundation
 public protocol CartItemProtocol {
     var item: String { get }
     var price: Int { get }
+    var quantity: Int { get}
 
+    func setQuantity(_ quantity: Int)
     func isEqual(_ other: CartItemProtocol) -> Bool
 }
 
@@ -27,7 +29,11 @@ public final class Cart {
     }
 
     public func addItem(_ item: CartItemProtocol) {
-        items.append(item)
+        guard let item = items.first(where: { $0.isEqual(item) }) else {
+            return items.append(item)
+        }
+
+        item.setQuantity(item.quantity + 1)
     }
 
     public func removeItem(_ item: CartItemProtocol) {
