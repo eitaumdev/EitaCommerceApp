@@ -21,9 +21,9 @@ public final class Cart {
     //MARK: - Private properties
     private var items: [CartItemProtocol]
 
-    //MARK: - Public initializer
-    public init(items: [CartItemProtocol]) {
-        self.items = Cart.addItemOrUpdateQuantity(items)
+    //MARK: - Private initializer
+    private init(items: [CartItemProtocol]) {
+        self.items = items
     }
 
     //MARK: - Public Methods
@@ -43,7 +43,12 @@ public final class Cart {
         guard let itemIndex = items.firstIndex(where: { $0.isEqual(item) }) else {
             return
         }
-        items.remove(at: itemIndex)
+        let item = items[itemIndex]
+        if item.quantity > 1 {
+            item.setQuantity(item.quantity - 1)
+        } else {
+            items.remove(at: itemIndex)
+        }
     }
 
     public func clear() {
@@ -56,8 +61,8 @@ public final class Cart {
         }
     }
 
-    //MARK: - Private Items
-    private static func addItemOrUpdateQuantity(_ items: [CartItemProtocol]) -> [CartItemProtocol] {
+    //MARK: - Public static methods
+    public static func start(items: [CartItemProtocol]) -> Cart {
         var filteredItems = [CartItemProtocol]()
 
         items.forEach { item in
@@ -71,6 +76,6 @@ public final class Cart {
             }
         }
 
-        return filteredItems
+        return Cart(items: filteredItems)
     }
 }

@@ -16,7 +16,7 @@ class CartTests: XCTestCase {
 
     func testCart_AddTwoItem_ShouldHaveTwoItems() {
         //Arrenge
-        let sut = Cart(items: [])
+        let sut = Cart.start(items: [])
 
         //Act
         sut.addItem(item1)
@@ -30,7 +30,7 @@ class CartTests: XCTestCase {
 
     func testCart_RemoveOneItem_ShouldHaveOneItem() {
         //Arrenge
-        let sut = Cart(items: [item1, item2])
+        let sut = Cart.start(items: [item1, item2])
 
         //Act
         sut.removeItem(item1)
@@ -42,7 +42,7 @@ class CartTests: XCTestCase {
 
     func testCart_RemoveOneItem_ShouldHaveTwoItems() {
         //Arrenge
-        let sut = Cart(items: [item1, item2, item2])
+        let sut = Cart.start(items: [item1, item2, item2])
 
         //Act
         sut.removeItem(item2)
@@ -55,7 +55,7 @@ class CartTests: XCTestCase {
 
     func testCart_clearAllCart_CartShouldBeEmpty() {
         //Arrange
-        let sut = Cart(items: [item1, item2, item3])
+        let sut = Cart.start(items: [item1, item2, item3])
 
         //Act
         sut.clear()
@@ -66,7 +66,7 @@ class CartTests: XCTestCase {
 
     func testCart_getPrice_ShouldBe10() {
         //Arrange
-        let sut = Cart(items: [item1])
+        let sut = Cart.start(items: [item1])
 
         //Assert
         XCTAssertEqual(sut.getPrice(), 10)
@@ -74,7 +74,7 @@ class CartTests: XCTestCase {
 
     func testCart_getPrice_ShouldBe20() {
         //Arrange
-        let sut = Cart(items: [item1, item2])
+        let sut = Cart.start(items: [item1, item2])
 
         //Assert
         XCTAssertEqual(sut.getPrice(), 20)
@@ -82,7 +82,7 @@ class CartTests: XCTestCase {
 
     func testCart_AddTwoTimesTheSameItem_CartShoudBeOneItemWithQuantityTwo() {
         //Arrange
-        let sut = Cart(items: [])
+        let sut = Cart.start(items: [])
 
         //Act
         sut.addItem(item1)
@@ -95,7 +95,7 @@ class CartTests: XCTestCase {
 
     func testCart_CartWithSameTwoItems_CartShoudBeOneItemWithQuantityTwo() {
         //Arrange
-        let sut = Cart(items: [item1, item1])
+        let sut = Cart.start(items: [item1, item1])
 
         //Assert
         XCTAssertEqual(sut.getItems().count, 1)
