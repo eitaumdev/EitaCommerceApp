@@ -10,9 +10,9 @@ import EitaCommerceCore
 
 class CartTests: XCTestCase {
 
-    let item1 = CartItem(item: "Item 1", price: 10)
-    let item2 = CartItem(item: "Item 2", price: 10)
-    let item3 = CartItem(item: "Item 3", price: 10)
+    let item1 = CartItem(item: Item(id: UUID(uuidString: "Item 1") ?? UUID(), name: "Item 1", price: 10), price: 10)
+    let item2 = CartItem(item: Item(id: UUID(uuidString: "Item 2") ?? UUID(), name: "Item 1", price: 10), price: 10)
+    let item3 = CartItem(item: Item(id: UUID(uuidString: "Item 3") ?? UUID(), name: "Item 1", price: 10), price: 10)
 
     func testCart_AddTwoItem_ShouldHaveTwoItems() {
         //Arrenge
@@ -105,13 +105,18 @@ class CartTests: XCTestCase {
 
 
     // Mark: - Helper
+    struct Item: ItemProtocol {
+        var id: UUID
+        var name: String
+        var price: Int
+    }
 
     class CartItem: CartItemProtocol {
-        let item: String
+        let item: ItemProtocol
         let price: Int
         var quantity: Int = 1
 
-        init(item: String, price: Int) {
+        init(item: ItemProtocol, price: Int) {
             self.item = item
             self.price = price
         }
@@ -121,7 +126,7 @@ class CartTests: XCTestCase {
         }
 
         func isEqual(_ other: CartItemProtocol) -> Bool {
-            return item == other.item
+            return item.id == other.item.id
         }
     }
 }

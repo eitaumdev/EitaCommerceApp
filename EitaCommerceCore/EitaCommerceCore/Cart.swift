@@ -7,10 +7,16 @@
 
 import Foundation
 
-public protocol CartItemProtocol {
-    var item: String { get }
+public protocol ItemProtocol {
+    var id: UUID { get }
+    var name: String { get }
     var price: Int { get }
-    var quantity: Int { get}
+}
+
+public protocol CartItemProtocol {
+    var item: ItemProtocol { get }
+    var price: Int { get }
+    var quantity: Int { get }
 
     func setQuantity(_ quantity: Int)
     func isEqual(_ other: CartItemProtocol) -> Bool
