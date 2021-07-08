@@ -108,15 +108,15 @@ class CartTests: XCTestCase {
     struct Item: ItemProtocol {
         var id: UUID
         var name: String
-        var price: Int
+        var price: Double
     }
 
     class CartItem: CartItemProtocol {
         let item: ItemProtocol
-        let price: Int
+        let price: Double
         var quantity: Int = 1
 
-        init(item: ItemProtocol, price: Int) {
+        init(item: ItemProtocol, price: Double) {
             self.item = item
             self.price = price
         }

@@ -10,12 +10,12 @@ import Foundation
 public protocol ItemProtocol {
     var id: UUID { get }
     var name: String { get }
-    var price: Int { get }
+    var price: Double { get }
 }
 
 public protocol CartItemProtocol {
     var item: ItemProtocol { get }
-    var price: Int { get }
+    var price: Double { get }
     var quantity: Int { get }
 
     func setQuantity(_ quantity: Int)
@@ -61,7 +61,7 @@ public final class Cart {
         items.removeAll()
     }
 
-    public func getPrice() -> Int {
+    public func getPrice() -> Double {
         return items.reduce(0) { result, item in
             result + item.price
         }
