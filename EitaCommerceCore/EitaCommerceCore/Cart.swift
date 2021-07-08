@@ -19,10 +19,11 @@ public protocol CartItemProtocol {
     var quantity: Int { get }
 
     func setQuantity(_ quantity: Int)
-    func isEqual(_ other: CartItemProtocol) -> Bool
 }
 
-public final class Cart<Item: CartItemProtocol> {
+public typealias CartItemEquatable = CartItemProtocol & Equatable
+
+public final class Cart<Item: CartItemEquatable> {
 
     //MARK: - Private properties
     private var items: [Item]
@@ -38,7 +39,7 @@ public final class Cart<Item: CartItemProtocol> {
     }
 
     public func addItem(_ item: Item) {
-        guard let item = items.first(where: { $0.isEqual(item) }) else {
+        guard let item = items.first(where: { $0 == item }) else {
             return items.append(item)
         }
 
@@ -46,7 +47,7 @@ public final class Cart<Item: CartItemProtocol> {
     }
 
     public func removeItem(_ item: Item) {
-        guard let itemIndex = items.firstIndex(where: { $0.isEqual(item) }) else {
+        guard let itemIndex = items.firstIndex(where: { $0 == item }) else {
             return
         }
         let item = items[itemIndex]
@@ -72,11 +73,9 @@ public final class Cart<Item: CartItemProtocol> {
         var filteredItems = [Item]()
 
         items.forEach { item in
-            let internalFilteredItem = items.filter { internalItem in
-                item.isEqual(internalItem)
-            }
+            let internalFilteredItem = items.filter { $0 == item }
 
-            if !filteredItems.contains(where: { $0.isEqual(item) }) {
+            if !filteredItems.contains(where: { $0 == item }) {
                 item.setQuantity(internalFilteredItem.count)
                 filteredItems.append(item)
             }

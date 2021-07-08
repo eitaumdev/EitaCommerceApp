@@ -24,8 +24,8 @@ class CartTests: XCTestCase {
 
         //Assert
         XCTAssertEqual(sut.getItems().count, 2)
-        XCTAssertTrue(sut.getItems().first!.isEqual(item1))
-        XCTAssertTrue(sut.getItems().last!.isEqual(item2))
+        XCTAssertEqual(sut.getItems().first, item1)
+        XCTAssertEqual(sut.getItems().last, item2)
     }
 
     func testCart_RemoveOneItem_ShouldHaveOneItem() {
@@ -37,7 +37,7 @@ class CartTests: XCTestCase {
 
         //Assert
         XCTAssertEqual(sut.getItems().count, 1)
-        XCTAssertTrue(sut.getItems().first!.isEqual(item2))
+        XCTAssertEqual(sut.getItems().first, item2)
     }
 
     func testCart_RemoveOneItem_ShouldHaveTwoItems() {
@@ -49,8 +49,8 @@ class CartTests: XCTestCase {
 
         //Assert
         XCTAssertEqual(sut.getItems().count, 2)
-        XCTAssertTrue(sut.getItems().first!.isEqual(item1))
-        XCTAssertTrue(sut.getItems().last!.isEqual(item2))
+        XCTAssertEqual(sut.getItems().first, item1)
+        XCTAssertEqual(sut.getItems().last, item2)
     }
 
     func testCart_clearAllCart_CartShouldBeEmpty() {
@@ -111,7 +111,7 @@ class CartTests: XCTestCase {
         var price: Double
     }
 
-    class CartItem: CartItemProtocol {
+    class CartItem: CartItemEquatable {
         let item: ItemProtocol
         let price: Double
         var quantity: Int = 1
@@ -125,8 +125,8 @@ class CartTests: XCTestCase {
             self.quantity = quantity
         }
 
-        func isEqual(_ other: CartItemProtocol) -> Bool {
-            return item.id == other.item.id
+        static func == (lhs: CartTests.CartItem, rhs: CartTests.CartItem) -> Bool {
+            return lhs.item.id == rhs.item.id
         }
     }
 }
