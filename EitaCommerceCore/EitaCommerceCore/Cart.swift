@@ -22,22 +22,22 @@ public protocol CartItemProtocol {
     func isEqual(_ other: CartItemProtocol) -> Bool
 }
 
-public final class Cart {
+public final class Cart<Item: CartItemProtocol> {
 
     //MARK: - Private properties
-    private var items: [CartItemProtocol]
+    private var items: [Item]
 
     //MARK: - Private initializer
-    private init(items: [CartItemProtocol]) {
+    private init(items: [Item]) {
         self.items = items
     }
 
     //MARK: - Public Methods
-    public func getItems() -> [CartItemProtocol] {
+    public func getItems() -> [Item] {
         return items
     }
 
-    public func addItem(_ item: CartItemProtocol) {
+    public func addItem(_ item: Item) {
         guard let item = items.first(where: { $0.isEqual(item) }) else {
             return items.append(item)
         }
@@ -45,7 +45,7 @@ public final class Cart {
         item.setQuantity(item.quantity + 1)
     }
 
-    public func removeItem(_ item: CartItemProtocol) {
+    public func removeItem(_ item: Item) {
         guard let itemIndex = items.firstIndex(where: { $0.isEqual(item) }) else {
             return
         }
@@ -68,8 +68,8 @@ public final class Cart {
     }
 
     //MARK: - Public static methods
-    public static func start(items: [CartItemProtocol]) -> Cart {
-        var filteredItems = [CartItemProtocol]()
+    public static func start(items: [Item]) -> Cart {
+        var filteredItems = [Item]()
 
         items.forEach { item in
             let internalFilteredItem = items.filter { internalItem in
