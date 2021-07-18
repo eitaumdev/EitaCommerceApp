@@ -28,8 +28,8 @@ public final class Cart<Item: CartItemEquatable> {
     //MARK: - Private properties
     private var items: [Item]
 
-    //MARK: - Private initializer
-    private init(items: [Item]) {
+    //MARK: - Public initializer
+    public init(items: [Item]) {
         self.items = items
     }
 

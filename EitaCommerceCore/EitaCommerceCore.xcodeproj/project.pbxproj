@@ -86,7 +86,7 @@
 		770E351B2647112700888660 /* EitaCommerceCoreTests */ = {
 			isa = PBXGroup;
 			children = (
-				77A235F326A478CF00DAEE65 /* Mocks */,
+				77A235F326A478CF00DAEE65 /* Helpers */,
 				770E351E2647112700888660 /* Info.plist */,
 				77E0B2A82651962A001C1876 /* CartTests.swift */,
 				77A235F126A476DB00DAEE65 /* AddItemCartUseCaseTests.swift */,
@@ -94,13 +94,13 @@
 			path = EitaCommerceCoreTests;
 			sourceTree = "<group>";
 		};
-		77A235F326A478CF00DAEE65 /* Mocks */ = {
+		77A235F326A478CF00DAEE65 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
 				77A235F426A478E100DAEE65 /* CartItem.swift */,
 				77A235F626A479B100DAEE65 /* Item.swift */,
 			);
-			path = Mocks;
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
