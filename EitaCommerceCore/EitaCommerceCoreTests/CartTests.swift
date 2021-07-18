@@ -10,9 +10,9 @@ import EitaCommerceCore
 
 class CartTests: XCTestCase {
 
-    let item1 = CartItem(item: Item(id: UUID(), name: "Item 1", price: 10), price: 10)
-    let item2 = CartItem(item: Item(id: UUID(), name: "Item 2", price: 10), price: 10)
-    let item3 = CartItem(item: Item(id: UUID(), name: "Item 3", price: 10), price: 10)
+    let item1 = CartItem(item: Item(name: "Item 1", price: 10))
+    let item2 = CartItem(item: Item(name: "Item 2", price: 10))
+    let item3 = CartItem(item: Item(name: "Item 3", price: 10))
 
     func testCart_AddTwoItem_ShouldHaveTwoItems() {
         //Arrenge
@@ -106,19 +106,20 @@ class CartTests: XCTestCase {
 
     // Mark: - Helper
     struct Item: ItemProtocol {
-        var id: UUID
+        var id = UUID()
         var name: String
         var price: Double
     }
 
     class CartItem: CartItemEquatable {
         let item: ItemProtocol
-        let price: Double
+        var price: Double {
+            return item.price * Double(quantity)
+        }
         var quantity: Int = 1
 
-        init(item: ItemProtocol, price: Double) {
+        init(item: ItemProtocol) {
             self.item = item
-            self.price = price
         }
 
         func setQuantity(_ quantity: Int) {
