@@ -101,33 +101,4 @@ class CartTests: XCTestCase {
         XCTAssertEqual(sut.getItems().count, 1)
         XCTAssertEqual(sut.getItems().first?.quantity, 2)
     }
-
-
-
-    // Mark: - Helper
-    struct Item: ItemProtocol {
-        var id = UUID()
-        var name: String
-        var price: Double
-    }
-
-    class CartItem: CartItemEquatable {
-        let item: ItemProtocol
-        var price: Double {
-            return item.price * Double(quantity)
-        }
-        var quantity: Int = 1
-
-        init(item: ItemProtocol) {
-            self.item = item
-        }
-
-        func setQuantity(_ quantity: Int) {
-            self.quantity = quantity
-        }
-
-        static func == (lhs: CartTests.CartItem, rhs: CartTests.CartItem) -> Bool {
-            return lhs.item.id == rhs.item.id
-        }
-    }
 }
