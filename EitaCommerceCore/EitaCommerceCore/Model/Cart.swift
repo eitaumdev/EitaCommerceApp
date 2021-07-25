@@ -37,26 +37,4 @@ public final class Cart<Item: CartItemEquatable> {
     public func getItems() -> [Item] {
         return items
     }
-
-    public func getPrice() -> Double {
-        return items.reduce(0) { result, item in
-            result + item.price
-        }
-    }
-
-    //MARK: - Public static methods
-    public static func start(items: [Item]) -> Cart {
-        var filteredItems = [Item]()
-
-        items.forEach { item in
-            let internalFilteredItem = items.filter { $0 == item }
-
-            if !filteredItems.contains(where: { $0 == item }) {
-                item.setQuantity(internalFilteredItem.count)
-                filteredItems.append(item)
-            }
-        }
-
-        return Cart(items: filteredItems)
-    }
 }
