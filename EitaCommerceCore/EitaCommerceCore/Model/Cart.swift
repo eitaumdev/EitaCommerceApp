@@ -23,15 +23,10 @@ public protocol CartItemProtocol {
 
 public typealias CartItemEquatable = CartItemProtocol & Equatable
 
-public final class Cart<Item: CartItemEquatable> {
+public struct Cart<Item: CartItemEquatable> {
 
     //MARK: - Private properties
-    private var items: [Item]
-
-    //MARK: - Public initializer
-    public init(items: [Item]) {
-        self.items = items
-    }
+    let items: [Item]
 
     //MARK: - Public Methods
     public func getItems() -> [Item] {
