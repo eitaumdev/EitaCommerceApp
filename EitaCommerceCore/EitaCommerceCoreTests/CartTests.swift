@@ -14,45 +14,6 @@ class CartTests: XCTestCase {
     let item2 = CartItem(item: Item(name: "Item 2", price: 10))
     let item3 = CartItem(item: Item(name: "Item 3", price: 10))
 
-    func testCart_AddTwoItem_ShouldHaveTwoItems() {
-        //Arrenge
-        let sut = Cart.start(items: [CartItem]())
-
-        //Act
-        sut.addItem(item1)
-        sut.addItem(item2)
-
-        //Assert
-        XCTAssertEqual(sut.getItems().count, 2)
-        XCTAssertEqual(sut.getItems().first, item1)
-        XCTAssertEqual(sut.getItems().last, item2)
-    }
-
-    func testCart_RemoveOneItem_ShouldHaveOneItem() {
-        //Arrenge
-        let sut = Cart.start(items: [item1, item2])
-
-        //Act
-        sut.removeItem(item1)
-
-        //Assert
-        XCTAssertEqual(sut.getItems().count, 1)
-        XCTAssertEqual(sut.getItems().first, item2)
-    }
-
-    func testCart_RemoveOneItem_ShouldHaveTwoItems() {
-        //Arrenge
-        let sut = Cart.start(items: [item1, item2, item2])
-
-        //Act
-        sut.removeItem(item2)
-
-        //Assert
-        XCTAssertEqual(sut.getItems().count, 2)
-        XCTAssertEqual(sut.getItems().first, item1)
-        XCTAssertEqual(sut.getItems().last, item2)
-    }
-
     func testCart_clearAllCart_CartShouldBeEmpty() {
         //Arrange
         let sut = Cart.start(items: [item1, item2, item3])
@@ -78,19 +39,6 @@ class CartTests: XCTestCase {
 
         //Assert
         XCTAssertEqual(sut.getPrice(), 20)
-    }
-
-    func testCart_AddTwoTimesTheSameItem_CartShoudBeOneItemWithQuantityTwo() {
-        //Arrange
-        let sut = Cart.start(items: [CartItem]())
-
-        //Act
-        sut.addItem(item1)
-        sut.addItem(item1)
-
-        //Assert
-        XCTAssertEqual(sut.getItems().count, 1)
-        XCTAssertEqual(sut.getItems().first?.quantity, 2)
     }
 
     func testCart_CartWithSameTwoItems_CartShoudBeOneItemWithQuantityTwo() {

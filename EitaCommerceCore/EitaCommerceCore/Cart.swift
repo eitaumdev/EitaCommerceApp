@@ -38,26 +38,6 @@ public final class Cart<Item: CartItemEquatable> {
         return items
     }
 
-    public func addItem(_ item: Item) {
-        guard let item = items.first(where: { $0 == item }) else {
-            return items.append(item)
-        }
-
-        item.setQuantity(item.quantity + 1)
-    }
-
-    public func removeItem(_ item: Item) {
-        guard let itemIndex = items.firstIndex(where: { $0 == item }) else {
-            return
-        }
-        let item = items[itemIndex]
-        if item.quantity > 1 {
-            item.setQuantity(item.quantity - 1)
-        } else {
-            items.remove(at: itemIndex)
-        }
-    }
-
     public func clear() {
         items.removeAll()
     }
