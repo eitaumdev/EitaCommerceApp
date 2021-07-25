@@ -14,7 +14,7 @@ protocol CalculatePriceCartUseCaseProtocol {
 
 class CalculatePriceCartUseCase<Item: CartItemEquatable>: CalculatePriceCartUseCaseProtocol {
     func execute(_ cart: Cart<Item>) -> Double {
-        return cart.getItems().reduce(0) { result, item in
+        return cart.items.reduce(0) { result, item in
             result + item.price
         }
     }

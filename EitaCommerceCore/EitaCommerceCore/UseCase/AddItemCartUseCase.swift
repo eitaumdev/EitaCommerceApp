@@ -15,7 +15,7 @@ protocol AddItemCartUseCaseProtocol {
 class AddItemCartUseCase<Item: CartItemEquatable>: AddItemCartUseCaseProtocol {
 
     func execute(_ item: Item, toCart cart: Cart<Item>) -> Cart<Item> {
-        var items: [Item] = cart.getItems()
+        var items: [Item] = cart.items
 
         guard let item = items.first(where: { $0 == item }) else {
             items.append(item)

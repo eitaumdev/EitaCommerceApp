@@ -22,9 +22,9 @@ class RemoveItemCartUseCaseTests: XCTestCase {
         let cart = sut.execute(item1, toCart: Cart(items: [item1, item2]))
 
         //Assert
-        XCTAssertEqual(cart.getItems().count, 1)
-        XCTAssertEqual(cart.getItems().first, item2)
-        XCTAssertEqual(cart.getItems().last, item2)
+        XCTAssertEqual(cart.items.count, 1)
+        XCTAssertEqual(cart.items.first, item2)
+        XCTAssertEqual(cart.items.last, item2)
     }
 
     func testRemoveItemUseCase_removeOneItemWithQuantityTwo_ShouldReceiveCartWithTwoItems() {
@@ -37,8 +37,8 @@ class RemoveItemCartUseCaseTests: XCTestCase {
         let cart = sut.execute(item, toCart: Cart(items: [item, item2]))
 
         //Assert
-        XCTAssertEqual(cart.getItems().count, 2)
-        XCTAssertEqual(cart.getItems().first, item)
-        XCTAssertEqual(cart.getItems().last, item2)
+        XCTAssertEqual(cart.items.count, 2)
+        XCTAssertEqual(cart.items.first, item)
+        XCTAssertEqual(cart.items.last, item2)
     }
 }

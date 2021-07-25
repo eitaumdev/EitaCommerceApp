@@ -19,6 +19,6 @@ class ClearCartUseCaseTests: XCTestCase {
         let sut = ClearCartUseCase<CartItem>()
 
         //Assert
-        XCTAssertTrue(sut.execute().getItems().isEmpty)
+        XCTAssertTrue(sut.execute().items.isEmpty)
     }
 }

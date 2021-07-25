@@ -22,7 +22,7 @@ class AddItemCartUseCaseTests: XCTestCase {
         let cart = sut.execute(item1, toCart: Cart(items: [CartItem]()))
 
         //Assert
-        XCTAssertEqual(cart.getItems().count, 1)
+        XCTAssertEqual(cart.items.count, 1)
     }
 
     func testAddItemUseCase_addTwoEqualItems_ShouldReceiveCartWithOneItemWithQuantityTwo() {
@@ -34,8 +34,8 @@ class AddItemCartUseCaseTests: XCTestCase {
         cart = sut.execute(item1, toCart: cart)
 
         //Assert
-        XCTAssertEqual(cart.getItems().count, 1)
-        XCTAssertEqual(cart.getItems().first?.quantity, 2)
+        XCTAssertEqual(cart.items.count, 1)
+        XCTAssertEqual(cart.items.first?.quantity, 2)
     }
 
     func testAddItemUseCase_addTwoItems_ShouldReceiveCartWithTwoItems() {
@@ -47,6 +47,6 @@ class AddItemCartUseCaseTests: XCTestCase {
         cart = sut.execute(item2, toCart: cart)
 
         //Assert
-        XCTAssertEqual(cart.getItems().count, 2)
+        XCTAssertEqual(cart.items.count, 2)
     }
 }

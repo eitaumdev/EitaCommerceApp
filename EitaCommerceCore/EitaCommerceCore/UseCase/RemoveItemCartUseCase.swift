@@ -15,7 +15,7 @@ protocol RemoveItemCartUseCaseProtocol {
 class RemoveItemCartUseCase<Item: CartItemEquatable>: RemoveItemCartUseCaseProtocol {
 
     func execute(_ item: Item, toCart cart: Cart<Item>) -> Cart<Item> {
-        var items = cart.getItems()
+        var items = cart.items
 
         guard let itemIndex = items.firstIndex(where: { $0 == item }) else {
             return cart
