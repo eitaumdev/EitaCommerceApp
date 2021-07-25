@@ -41,4 +41,17 @@ class RemoveItemCartUseCaseTests: XCTestCase {
         XCTAssertEqual(cart.items.first, item)
         XCTAssertEqual(cart.items.last, item2)
     }
+
+    func testRemoveItemUseCase_removeOneItemThatIsNotOnTheCart_ShouldReceiveCartWithTheSameItems() {
+        //Arrange
+        let sut = RemoveItemCartUseCase<CartItem>()
+
+        //Act
+        let cart = sut.execute(item3, toCart: Cart(items: [item1, item2]))
+
+        //Assert
+        XCTAssertEqual(cart.items.count, 2)
+        XCTAssertEqual(cart.items.first, item1)
+        XCTAssertEqual(cart.items.last, item2)
+    }
 }
