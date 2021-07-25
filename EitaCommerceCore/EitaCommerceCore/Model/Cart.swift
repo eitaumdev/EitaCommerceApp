@@ -38,10 +38,6 @@ public final class Cart<Item: CartItemEquatable> {
         return items
     }
 
-    public func clear() {
-        items.removeAll()
-    }
-
     public func getPrice() -> Double {
         return items.reduce(0) { result, item in
             result + item.price

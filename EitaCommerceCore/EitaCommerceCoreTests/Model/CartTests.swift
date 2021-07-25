@@ -14,17 +14,6 @@ class CartTests: XCTestCase {
     let item2 = CartItem(item: Item(name: "Item 2", price: 10))
     let item3 = CartItem(item: Item(name: "Item 3", price: 10))
 
-    func testCart_clearAllCart_CartShouldBeEmpty() {
-        //Arrange
-        let sut = Cart.start(items: [item1, item2, item3])
-
-        //Act
-        sut.clear()
-
-        //Assert
-        XCTAssertTrue(sut.getItems().isEmpty)
-    }
-
     func testCart_getPrice_ShouldBe10() {
         //Arrange
         let sut = Cart.start(items: [item1])
