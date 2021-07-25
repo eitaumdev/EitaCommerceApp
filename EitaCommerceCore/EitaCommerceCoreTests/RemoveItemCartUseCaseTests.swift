@@ -6,31 +6,7 @@
 //
 
 import XCTest
-import EitaCommerceCore
-
-protocol RemoveItemCartUseCaseProtocol {
-    associatedtype Item: CartItemEquatable
-    func execute(_ item: Item, toCart cart: Cart<Item>) -> Cart<Item>
-}
-
-class RemoveItemCartUseCase<Item: CartItemEquatable>: AddItemCartUseCaseProtocol {
-
-    func execute(_ item: Item, toCart cart: Cart<Item>) -> Cart<Item> {
-        var items = cart.getItems()
-
-        guard let itemIndex = items.firstIndex(where: { $0 == item }) else {
-            return cart
-        }
-        let item = items[itemIndex]
-        if item.quantity > 1 {
-            item.setQuantity(item.quantity - 1)
-        } else {
-            items.remove(at: itemIndex)
-        }
-
-        return Cart(items: items)
-    }
-}
+@testable import EitaCommerceCore
 
 class RemoveItemCartUseCaseTests: XCTestCase {
 
