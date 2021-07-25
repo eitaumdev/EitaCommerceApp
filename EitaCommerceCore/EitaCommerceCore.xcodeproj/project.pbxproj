@@ -12,6 +12,8 @@
 		777D064E26ADF0D0000C81E2 /* RemoveItemCartUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777D064D26ADF0D0000C81E2 /* RemoveItemCartUseCaseTests.swift */; };
 		777D065026ADF33A000C81E2 /* AddItemCartUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777D064F26ADF33A000C81E2 /* AddItemCartUseCase.swift */; };
 		777D065226ADF35B000C81E2 /* RemoveItemCartUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777D065126ADF35B000C81E2 /* RemoveItemCartUseCase.swift */; };
+		777D065826ADF439000C81E2 /* ClearCartUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777D065726ADF439000C81E2 /* ClearCartUseCaseTests.swift */; };
+		777D065A26ADF57F000C81E2 /* ClearCartUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777D065926ADF57F000C81E2 /* ClearCartUseCase.swift */; };
 		77A235F226A476DB00DAEE65 /* AddItemCartUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A235F126A476DB00DAEE65 /* AddItemCartUseCaseTests.swift */; };
 		77A235F526A478E100DAEE65 /* CartItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A235F426A478E100DAEE65 /* CartItem.swift */; };
 		77A235F726A479B100DAEE65 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A235F626A479B100DAEE65 /* Item.swift */; };
@@ -37,6 +39,8 @@
 		777D064D26ADF0D0000C81E2 /* RemoveItemCartUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveItemCartUseCaseTests.swift; sourceTree = "<group>"; };
 		777D064F26ADF33A000C81E2 /* AddItemCartUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemCartUseCase.swift; sourceTree = "<group>"; };
 		777D065126ADF35B000C81E2 /* RemoveItemCartUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveItemCartUseCase.swift; sourceTree = "<group>"; };
+		777D065726ADF439000C81E2 /* ClearCartUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearCartUseCaseTests.swift; sourceTree = "<group>"; };
+		777D065926ADF57F000C81E2 /* ClearCartUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearCartUseCase.swift; sourceTree = "<group>"; };
 		77A235F126A476DB00DAEE65 /* AddItemCartUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemCartUseCaseTests.swift; sourceTree = "<group>"; };
 		77A235F426A478E100DAEE65 /* CartItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItem.swift; sourceTree = "<group>"; };
 		77A235F626A479B100DAEE65 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
@@ -106,6 +110,7 @@
 			children = (
 				777D065126ADF35B000C81E2 /* RemoveItemCartUseCase.swift */,
 				777D064F26ADF33A000C81E2 /* AddItemCartUseCase.swift */,
+				777D065926ADF57F000C81E2 /* ClearCartUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -129,6 +134,7 @@
 		777D065626ADF400000C81E2 /* UseCase */ = {
 			isa = PBXGroup;
 			children = (
+				777D065726ADF439000C81E2 /* ClearCartUseCaseTests.swift */,
 				777D064D26ADF0D0000C81E2 /* RemoveItemCartUseCaseTests.swift */,
 				77A235F126A476DB00DAEE65 /* AddItemCartUseCaseTests.swift */,
 			);
@@ -256,6 +262,7 @@
 				777D065226ADF35B000C81E2 /* RemoveItemCartUseCase.swift in Sources */,
 				777D065026ADF33A000C81E2 /* AddItemCartUseCase.swift in Sources */,
 				7700F1AF266A6A0000F3044C /* Cart.swift in Sources */,
+				777D065A26ADF57F000C81E2 /* ClearCartUseCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,6 +270,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				777D065826ADF439000C81E2 /* ClearCartUseCaseTests.swift in Sources */,
 				77A235F526A478E100DAEE65 /* CartItem.swift in Sources */,
 				77A235F226A476DB00DAEE65 /* AddItemCartUseCaseTests.swift in Sources */,
 				777D064E26ADF0D0000C81E2 /* RemoveItemCartUseCaseTests.swift in Sources */,
