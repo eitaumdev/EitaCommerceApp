@@ -11,6 +11,7 @@ import XCTest
 public final class EitaCommerceCore<Item: CartItemEquatable> {
     var cart = Cart(items: [Item]())
     let addItemCartUseCase = AddItemCartUseCase<Item>()
+    let removeItemCartUseCase = RemoveItemCartUseCase<Item>()
 
     var currentCart: Cart<Item> {
         cart
@@ -28,6 +29,11 @@ public final class EitaCommerceCore<Item: CartItemEquatable> {
 
     func add(item: Item) -> Cart<Item> {
         cart = addItemCartUseCase.execute(item, toCart: cart)
+        return cart
+    }
+
+    func remove(item: Item) -> Cart<Item> {
+        cart = removeItemCartUseCase.execute(item, toCart: cart)
         return cart
     }
 }
@@ -65,5 +71,19 @@ class EitaCommerceCoreTests: XCTestCase {
         XCTAssertEqual(cart.items, [item])
         XCTAssertEqual(sut.currentCart.items.count, 1)
         XCTAssertEqual(sut.currentCart.items, [item])
+    }
+
+    func testEitaCommerceCore_removeItem_ShouldReturnCartWithoutItem() {
+        //Arrange
+        let sut = EitaCommerceCore.startWith(items: [item])
+
+        //Act
+        let cart = sut.remove(item: item)
+
+        //Assert
+        XCTAssertEqual(cart.items.count, 0)
+        XCTAssertEqual(cart.items, [])
+        XCTAssertEqual(sut.currentCart.items.count, 0)
+        XCTAssertEqual(sut.currentCart.items, [])
     }
 }
