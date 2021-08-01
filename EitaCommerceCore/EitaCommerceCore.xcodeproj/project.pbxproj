@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7700F1AF266A6A0000F3044C /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7700F1AE266A6A0000F3044C /* Cart.swift */; };
 		770E35182647112700888660 /* EitaCommerceCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 770E350E2647112700888660 /* EitaCommerceCore.framework */; };
+		7776B23726B6FE3000D7A732 /* EitaCommerceCoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7776B23626B6FE3000D7A732 /* EitaCommerceCoreTests.swift */; };
 		777D064E26ADF0D0000C81E2 /* RemoveItemCartUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777D064D26ADF0D0000C81E2 /* RemoveItemCartUseCaseTests.swift */; };
 		777D065026ADF33A000C81E2 /* AddItemCartUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777D064F26ADF33A000C81E2 /* AddItemCartUseCase.swift */; };
 		777D065226ADF35B000C81E2 /* RemoveItemCartUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777D065126ADF35B000C81E2 /* RemoveItemCartUseCase.swift */; };
@@ -38,6 +39,7 @@
 		770E35122647112700888660 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		770E35172647112700888660 /* EitaCommerceCoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EitaCommerceCoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		770E351E2647112700888660 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7776B23626B6FE3000D7A732 /* EitaCommerceCoreTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EitaCommerceCoreTests.swift; sourceTree = "<group>"; };
 		777D064D26ADF0D0000C81E2 /* RemoveItemCartUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveItemCartUseCaseTests.swift; sourceTree = "<group>"; };
 		777D064F26ADF33A000C81E2 /* AddItemCartUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemCartUseCase.swift; sourceTree = "<group>"; };
 		777D065126ADF35B000C81E2 /* RemoveItemCartUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveItemCartUseCase.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 		770E351B2647112700888660 /* EitaCommerceCoreTests */ = {
 			isa = PBXGroup;
 			children = (
+				7776B23626B6FE3000D7A732 /* EitaCommerceCoreTests.swift */,
 				77A235F326A478CF00DAEE65 /* Helpers */,
 				770E351E2647112700888660 /* Info.plist */,
 				777D065526ADF3F9000C81E2 /* Model */,
@@ -277,6 +280,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7776B23726B6FE3000D7A732 /* EitaCommerceCoreTests.swift in Sources */,
 				777D065826ADF439000C81E2 /* ClearCartUseCaseTests.swift in Sources */,
 				77A235F526A478E100DAEE65 /* CartItem.swift in Sources */,
 				777D065C26ADF5F9000C81E2 /* CalculatePriceCartUseCaseTests.swift in Sources */,

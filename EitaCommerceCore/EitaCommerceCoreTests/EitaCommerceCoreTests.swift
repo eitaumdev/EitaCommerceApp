@@ -8,26 +8,62 @@
 import XCTest
 @testable import EitaCommerceCore
 
+public final class EitaCommerceCore<Item: CartItemEquatable> {
+    var cart = Cart(items: [Item]())
+    let addItemCartUseCase = AddItemCartUseCase<Item>()
+
+    var currentCart: Cart<Item> {
+        cart
+    }
+
+    public static func startWith(items: [Item]) -> EitaCommerceCore {
+        let eita = EitaCommerceCore()
+
+        items.forEach { item in
+            _ = eita.add(item: item)
+        }
+
+        return eita
+    }
+
+    func add(item: Item) -> Cart<Item> {
+        cart = addItemCartUseCase.execute(item, toCart: cart)
+        return cart
+    }
+}
+
 class EitaCommerceCoreTests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    let item = CartItem(item: Item(name: "Item 1", price: 10))
+
+    func testEitaCommerceCore_start_ShouldReturnAValidEitaCommerceCore() {
+        //Arrange
+        let sut = EitaCommerceCore.startWith(items: [CartItem]())
+
+        //Assert
+        XCTAssertNotNil(sut)
     }
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    func testEitaCommerceCore_startWithItems_ShouldReturnEitaCommerceCoreWithCartPopulatedWithItems() {
+        //Arrange
+        let sut = EitaCommerceCore.startWith(items: [item])
+
+        //Assert
+        XCTAssertEqual(sut.currentCart.items.count, 1)
+        XCTAssertEqual(sut.currentCart.items, [item])
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
+    func testEitaCommerceCore_addItem_ShouldReturnCartWithItem() {
+        //Arrange
+        let sut = EitaCommerceCore.startWith(items: [CartItem]())
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
+        //Act
+        let cart = sut.add(item: item)
 
+        //Assert
+        XCTAssertEqual(cart.items.count, 1)
+        XCTAssertEqual(cart.items, [item])
+        XCTAssertEqual(sut.currentCart.items.count, 1)
+        XCTAssertEqual(sut.currentCart.items, [item])
+    }
 }
