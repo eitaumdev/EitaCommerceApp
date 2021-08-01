@@ -24,5 +24,5 @@ public protocol CartItemProtocol {
 public typealias CartItemEquatable = CartItemProtocol & Equatable
 
 public struct Cart<Item: CartItemEquatable> {
-    let items: [Item]
+    public let items: [Item]
 }

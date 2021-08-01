@@ -8,13 +8,13 @@
 import Foundation
 
 public final class EitaCommerceCore<Item: CartItemEquatable> {
-    var cart = Cart(items: [Item]())
-    let addItemCartUseCase = AddItemCartUseCase<Item>()
-    let removeItemCartUseCase = RemoveItemCartUseCase<Item>()
-    let clearCartUseCase = ClearCartUseCase<Item>()
-    let calculatePriceCartUseCase = CalculatePriceCartUseCase<Item>()
+    private var cart = Cart(items: [Item]())
+    private let addItemCartUseCase = AddItemCartUseCase<Item>()
+    private let removeItemCartUseCase = RemoveItemCartUseCase<Item>()
+    private let clearCartUseCase = ClearCartUseCase<Item>()
+    private let calculatePriceCartUseCase = CalculatePriceCartUseCase<Item>()
 
-    var currentCart: Cart<Item> {
+    public var currentCart: Cart<Item> {
         cart
     }
 
@@ -28,22 +28,22 @@ public final class EitaCommerceCore<Item: CartItemEquatable> {
         return eita
     }
 
-    func add(item: Item) -> Cart<Item> {
+    public func add(item: Item) -> Cart<Item> {
         cart = addItemCartUseCase.execute(item, toCart: cart)
         return cart
     }
 
-    func remove(item: Item) -> Cart<Item> {
+    public func remove(item: Item) -> Cart<Item> {
         cart = removeItemCartUseCase.execute(item, toCart: cart)
         return cart
     }
 
-    func clear() -> Cart<Item> {
+    public func clear() -> Cart<Item> {
         cart = clearCartUseCase.execute()
         return cart
     }
 
-    func calculateTotalPrice() -> Double {
+    public func calculateTotalPrice() -> Double {
         return calculatePriceCartUseCase.execute(cart)
     }
 }

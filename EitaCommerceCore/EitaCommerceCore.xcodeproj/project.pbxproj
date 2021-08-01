@@ -21,7 +21,6 @@
 		77A235F226A476DB00DAEE65 /* AddItemCartUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A235F126A476DB00DAEE65 /* AddItemCartUseCaseTests.swift */; };
 		77A235F526A478E100DAEE65 /* CartItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A235F426A478E100DAEE65 /* CartItem.swift */; };
 		77A235F726A479B100DAEE65 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A235F626A479B100DAEE65 /* Item.swift */; };
-		77E0B2A92651962A001C1876 /* CartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E0B2A82651962A001C1876 /* CartTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,7 +51,6 @@
 		77A235F126A476DB00DAEE65 /* AddItemCartUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemCartUseCaseTests.swift; sourceTree = "<group>"; };
 		77A235F426A478E100DAEE65 /* CartItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItem.swift; sourceTree = "<group>"; };
 		77A235F626A479B100DAEE65 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
-		77E0B2A82651962A001C1876 /* CartTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,7 +107,6 @@
 				7776B23626B6FE3000D7A732 /* EitaCommerceCoreTests.swift */,
 				77A235F326A478CF00DAEE65 /* Helpers */,
 				770E351E2647112700888660 /* Info.plist */,
-				777D065526ADF3F9000C81E2 /* Model */,
 				777D065626ADF400000C81E2 /* UseCase */,
 			);
 			path = EitaCommerceCoreTests;
@@ -130,14 +127,6 @@
 			isa = PBXGroup;
 			children = (
 				7700F1AE266A6A0000F3044C /* Cart.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		777D065526ADF3F9000C81E2 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				77E0B2A82651962A001C1876 /* CartTests.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -291,7 +280,6 @@
 				77A235F226A476DB00DAEE65 /* AddItemCartUseCaseTests.swift in Sources */,
 				777D064E26ADF0D0000C81E2 /* RemoveItemCartUseCaseTests.swift in Sources */,
 				77A235F726A479B100DAEE65 /* Item.swift in Sources */,
-				77E0B2A92651962A001C1876 /* CartTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -6,7 +6,7 @@
 //
 
 import XCTest
-@testable import EitaCommerceCore
+import EitaCommerceCore
 
 class EitaCommerceCoreTests: XCTestCase {
 
