@@ -13,6 +13,7 @@ public final class EitaCommerceCore<Item: CartItemEquatable> {
     let addItemCartUseCase = AddItemCartUseCase<Item>()
     let removeItemCartUseCase = RemoveItemCartUseCase<Item>()
     let clearCartUseCase = ClearCartUseCase<Item>()
+    let calculatePriceCartUseCase = CalculatePriceCartUseCase<Item>()
 
     var currentCart: Cart<Item> {
         cart
@@ -41,6 +42,10 @@ public final class EitaCommerceCore<Item: CartItemEquatable> {
     func clear() -> Cart<Item> {
         cart = clearCartUseCase.execute()
         return cart
+    }
+
+    func calculateTotalPrice() -> Double {
+        return calculatePriceCartUseCase.execute(cart)
     }
 }
 
@@ -105,5 +110,16 @@ class EitaCommerceCoreTests: XCTestCase {
         XCTAssertEqual(cart.items, [])
         XCTAssertEqual(sut.currentCart.items.count, 0)
         XCTAssertEqual(sut.currentCart.items, [])
+    }
+
+    func testEitaCommerceCore_calculateTotalPrice_ShouldReturnCartTotalPrice() {
+        //Arrange
+        let sut = EitaCommerceCore.startWith(items: [item])
+
+        //Act
+        let price = sut.calculateTotalPrice()
+
+        //Assert
+        XCTAssertEqual(price, 10)
     }
 }
