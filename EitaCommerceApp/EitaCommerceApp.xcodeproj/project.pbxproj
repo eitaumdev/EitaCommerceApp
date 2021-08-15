@@ -16,6 +16,7 @@
 		7777111626C047E600483D71 /* EitaCommerceCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7777111526C047E600483D71 /* EitaCommerceCore.framework */; };
 		7777111726C047E600483D71 /* EitaCommerceCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7777111526C047E600483D71 /* EitaCommerceCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		77A5E3B226C99851003585EE /* ItemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A5E3B126C99851003585EE /* ItemTests.swift */; };
+		77A5E3B526C99FA1003585EE /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A5E3B426C99FA1003585EE /* Item.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		7777110826C0466F00483D71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7777111526C047E600483D71 /* EitaCommerceCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = EitaCommerceCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		77A5E3B126C99851003585EE /* ItemTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTests.swift; sourceTree = "<group>"; };
+		77A5E3B426C99FA1003585EE /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 		777710E826C0466D00483D71 /* EitaCommerceApp */ = {
 			isa = PBXGroup;
 			children = (
+				77A5E3B326C99F95003585EE /* Model */,
 				777710E926C0466D00483D71 /* EitaCommerceAppApp.swift */,
 				777710EB26C0466D00483D71 /* ContentView.swift */,
 				777710ED26C0466F00483D71 /* Assets.xcassets */,
@@ -138,7 +141,7 @@
 			children = (
 				777710FB26C0466F00483D71 /* EitaCommerceAppTests.swift */,
 				777710FD26C0466F00483D71 /* Info.plist */,
-				77A5E3B126C99851003585EE /* ItemTests.swift */,
+				77A5E3B626C99FC9003585EE /* Model */,
 			);
 			path = EitaCommerceAppTests;
 			sourceTree = "<group>";
@@ -158,6 +161,22 @@
 				7777111526C047E600483D71 /* EitaCommerceCore.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		77A5E3B326C99F95003585EE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				77A5E3B426C99FA1003585EE /* Item.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		77A5E3B626C99FC9003585EE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				77A5E3B126C99851003585EE /* ItemTests.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -291,6 +310,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				777710EC26C0466D00483D71 /* ContentView.swift in Sources */,
+				77A5E3B526C99FA1003585EE /* Item.swift in Sources */,
 				777710EA26C0466D00483D71 /* EitaCommerceAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
