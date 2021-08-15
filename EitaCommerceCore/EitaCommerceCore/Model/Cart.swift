@@ -8,7 +8,7 @@
 import Foundation
 
 public protocol ItemProtocol {
-    var id: UUID { get }
+    var id: Int { get }
     var name: String { get }
     var price: Double { get }
 }

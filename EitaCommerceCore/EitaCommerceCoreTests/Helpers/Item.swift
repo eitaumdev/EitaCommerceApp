@@ -9,7 +9,7 @@ import Foundation
 import EitaCommerceCore
 
 struct Item: ItemProtocol {
-    var id = UUID()
+    var id: Int
     var name: String
     var price: Double
 }
